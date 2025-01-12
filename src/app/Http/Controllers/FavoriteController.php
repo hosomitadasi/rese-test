@@ -15,6 +15,6 @@ class FavoriteController extends Controller
     public function delete($shop_id)
     {
         Like::where('user_id', Auth::id())->where('shop_id', $shop_id)->delete();
-        return redirect()->back();;
+        return redirect()->route('mypage')->with('success', 'お気に入りを削除しました');;
     }
 }

@@ -2,6 +2,11 @@
 
 @section('main')
 <div class="main">
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
     <div class="flex wrap shops">
         @foreach($shops as $shop)
         <div class="shop-card">
